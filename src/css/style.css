@@ -1,0 +1,14 @@
+table{
+  table-layout: fixed;
+  border: 10px  #3E4159 solid;
+}
+td  .black{
+  background-color: #3E4159;
+  min-height:95px;
+  min-width:90px;
+}
+
+td .white{
+  background-color: white;
+
+}
