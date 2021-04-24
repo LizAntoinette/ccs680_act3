@@ -15,17 +15,32 @@
         </tbody>
       </table>
     </div>
+    <div class="mt-3">
+     
+        <b-button class="mr-2" size="sm">Reset</b-button>
+        <b-button class="mr-2" size="sm">Start</b-button>
+        
+        <b-button class="mr-2"size="sm">Previous</b-button>
+        <b-button class="mr-2"size="sm">Next</b-button>
+  
+    </div>
   </div>
 </template>
 <script>
+import {fourQueen} from '../algorithms/fourQueens';
+
 export default {
   data() {
     return {
       chessboard: null,
+      animateArray: [],
+      btnNext: false, 
+      btnPrev: false
     };
   },
   created: function () {
     this.createChessBoard();
+    
   },
   methods: {
     createChessBoard() {
@@ -43,6 +58,17 @@ export default {
       }
       console.log(this.chessboard);
     },
+    startforQueen(){
+      this.animateArray = fourQueen();
+      this.btnNext = true;
+      this.btnPrev = true;
+    }, 
+    nextfourQueen(){
+
+    },
+    prevfourQueen(){
+
+    }
   },
 };
 </script>
