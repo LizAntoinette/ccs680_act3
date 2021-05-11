@@ -1,3 +1,4 @@
+let animation = [];
 export function fourQueen(){
   let board = [0, 0, 0, 0];
   
@@ -5,10 +6,13 @@ export function fourQueen(){
   console.log(b);
   console.log("Is this working");
   console.log(board); 
-  return queen(board, 0, 4); // start one queen at a time and satisfy constraints
+
+  console.log("WTF")
+  let thefourQueen = queen(board, 0, 4);
+  return [thefourQueen, animation] // start one queen at a time and satisfy constraints
 }
 
-let animation = [];
+
 function queen(board, current, size){
   if (current === size) return true; // return true if we've placed the nth queen
 
@@ -16,16 +20,18 @@ function queen(board, current, size){
    
     board[current] = row; // set that queen and check if it's valid
     
-    animation.push({col:current, row:row});
-   
+    animation.push({col:current, rowz:row});
+ 
     if (noConflicts(board, current)) {
      
       var done = queen(board, current + 1, size);
      // if it works, go deeper
-     
-      if (done) return animation;
+      
+      if (done) return true;
     }
   }
+  console.log("this is the animation below")
+  //console.log(animation);
   return false;
 }
 
