@@ -1,17 +1,39 @@
 <template>
   <div id="app">
-    <Index />
+   <h1> Activity 3 </h1>
+    <b-button variant="info" @click="csp" size="lg" pill class="mr-2"> CSP </b-button>
+    <b-button variant="info" @click="genetic" size="lg" pill> Genetic Algorithm </b-button>
+    <FourQueen v-if="cspView" />
   </div>
 </template>
 
 <script>
-import Index from "./components/Index";
-
+//mport Index from "./components/Index";
+import FourQueen from "./components/FourQueen";
+import Genetic from "./components/GeneticAlgorithm";
 export default {
   name: "App",
   components: {
-    Index,
+    FourQueen,
+    Genetic
   },
+  data() {
+    return {
+        cspView: false,
+        geneticView:false,
+    }},
+   methods: {
+      csp(){
+          this.cspView = !this.cspView;
+          this.geneticView = false;
+      },
+      genetic(){
+          this.geneticView =  !this.geneticView;
+          this.cspView = false;
+
+      }
+   }
+  
 };
 </script>
 
