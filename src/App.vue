@@ -11,17 +11,22 @@
 //mport Index from "./components/Index";
 import FourQueen from "./components/FourQueen";
 import Genetic from "./components/GeneticAlgorithm";
+import {solve} from "./algorithms/geneticSample"
 export default {
   name: "App",
   components: {
     FourQueen,
-    Genetic
+    Genetic, 
   },
   data() {
     return {
         cspView: false,
         geneticView:false,
     }},
+   created: function () {
+     solve()
+   },
+
    methods: {
       csp(){
           this.cspView = !this.cspView;
